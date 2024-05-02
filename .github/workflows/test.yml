@@ -38,7 +38,7 @@ jobs:
           path: ./package.tgz
 
   test-types:
-    name: Test Types with TypeScript ${{ matrix.ts }}
+    name: Test Types with TypeScript ${{ matrix.ts }} and React ${{ matrix.react.version }}
 
     needs: [build]
     runs-on: ubuntu-latest
