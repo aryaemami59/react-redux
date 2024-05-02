@@ -14,8 +14,9 @@ import type {
 import { applyMiddleware, createStore } from 'redux'
 import type { ReactReduxContextValue } from '../../src/index'
 import { Provider as ProviderMock, connect } from '../../src/index'
+import { IS_REACT_19 } from '../../src/utils/react-is'
 
-const IS_REACT_18 = React.version.startsWith('18') || React.version.startsWith('19')
+const IS_REACT_18 = React.version.startsWith('18')
 
 describe('React', () => {
   describe('connect', () => {
@@ -2904,7 +2905,7 @@ describe('React', () => {
           </React.StrictMode>,
         )
 
-        if (IS_REACT_18) {
+        if (IS_REACT_18 || IS_REACT_19) {
           expect(spy).not.toHaveBeenCalled()
         } else {
           expect(spy.mock.calls[0]?.[0]).toEqual(

@@ -6,7 +6,7 @@ import React from 'react'
 // It's very possible this could change in the future, but given that
 // we only use these in `connect`, this is a low priority.
 
-const IS_REACT_19 = React.version.startsWith('19')
+export const IS_REACT_19 = React.version.startsWith('19')
 
 const REACT_ELEMENT_TYPE = Symbol.for(
   IS_REACT_19 ? 'react.transitional.element' : 'react.element',
