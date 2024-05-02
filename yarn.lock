@@ -2340,6 +2340,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:^15.7.12":
+  version: 15.7.12
+  resolution: "@types/prop-types@npm:15.7.12"
+  checksum: 10/ac16cc3d0a84431ffa5cfdf89579ad1e2269549f32ce0c769321fdd078f84db4fbe1b461ed5a1a496caf09e637c0e367d600c541435716a55b1d9713f5035dfe
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^18.0.0":
   version: 18.2.18
   resolution: "@types/react-dom@npm:18.2.18"
@@ -7031,6 +7038,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.3.0"
     "@testing-library/react": "npm:^15.0.5"
     "@types/node": "npm:^20.11.6"
+    "@types/prop-types": "npm:^15.7.12"
     "@types/react": "npm:types-react@19.0.0-beta.1"
     "@types/react-dom": "npm:types-react-dom@19.0.0-beta.1"
     "@types/use-sync-external-store": "npm:^0.0.3"
@@ -7059,12 +7067,9 @@ __metadata:
   peerDependencies:
     "@types/react": ^18.2.25
     react: ^18.0
-    react-native: ">=0.69"
     redux: ^5.0.0
   peerDependenciesMeta:
     "@types/react":
-      optional: true
-    react-native:
       optional: true
     redux:
       optional: true
