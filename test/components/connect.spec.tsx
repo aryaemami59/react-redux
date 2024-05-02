@@ -15,7 +15,7 @@ import { applyMiddleware, createStore } from 'redux'
 import type { ReactReduxContextValue } from '../../src/index'
 import { Provider as ProviderMock, connect } from '../../src/index'
 
-const IS_REACT_18 = React.version.startsWith('18')
+const IS_REACT_18 = React.version.startsWith('18') || React.version.startsWith('19')
 
 describe('React', () => {
   describe('connect', () => {
