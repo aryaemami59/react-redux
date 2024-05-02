@@ -753,7 +753,7 @@ function testConnectReturnType() {
 
   const myHoc2 = <P,>(C: React.FC<P>): React.ComponentType<P> => C
   // TODO Figure out the error here
-  // myHoc2(Test)
+  myHoc2(Test)
 }
 
 function testRef() {
