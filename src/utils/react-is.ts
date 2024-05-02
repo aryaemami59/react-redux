@@ -126,30 +126,3 @@ export function isSuspense(object: any) {
 export function isSuspenseList(object: any) {
   return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
 }
-
-// exports.ContextConsumer = ContextConsumer;
-// exports.ContextProvider = ContextProvider;
-// exports.Element = Element;
-// exports.ForwardRef = ForwardRef;
-// exports.Fragment = Fragment;
-// exports.Lazy = Lazy;
-// exports.Memo = Memo;
-// exports.Portal = Portal;
-// exports.Profiler = Profiler;
-// exports.StrictMode = StrictMode;
-// exports.Suspense = Suspense;
-// exports.SuspenseList = SuspenseList;
-// exports.isContextConsumer = isContextConsumer;
-// exports.isContextProvider = isContextProvider;
-// exports.isElement = isElement;
-// exports.isForwardRef = isForwardRef;
-// exports.isFragment = isFragment;
-// exports.isLazy = isLazy;
-// exports.isMemo = isMemo;
-// exports.isPortal = isPortal;
-// exports.isProfiler = isProfiler;
-// exports.isStrictMode = isStrictMode;
-// exports.isSuspense = isSuspense;
-// exports.isSuspenseList = isSuspenseList;
-// exports.isValidElementType = isValidElementType;
-// exports.typeOf = typeOf;
