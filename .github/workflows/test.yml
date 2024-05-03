@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: Test Suite
+    name: Build and run test Suite
     runs-on: ubuntu-latest
 
     steps:
