@@ -6,8 +6,8 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import type { Store } from 'redux'
 import { combineReducers, createStore } from 'redux'
-import type { ReactReduxContextValue } from '../../src/index'
-import { Provider, ReactReduxContext, connect } from '../../src/index'
+import type { ReactReduxContextValue } from 'react-redux'
+import { Provider, ReactReduxContext, connect } from 'react-redux'
 
 describe('React', () => {
   /*

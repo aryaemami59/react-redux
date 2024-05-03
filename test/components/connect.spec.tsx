@@ -12,8 +12,8 @@ import type {
   UnknownAction,
 } from 'redux'
 import { applyMiddleware, createStore } from 'redux'
-import type { ReactReduxContextValue } from '../../src/index'
-import { Provider as ProviderMock, connect } from '../../src/index'
+import type { ReactReduxContextValue } from 'react-redux'
+import { Provider as ProviderMock, connect } from 'react-redux'
 import { IS_REACT_19 } from '../../src/utils/react-is'
 
 const IS_REACT_18 = React.version.startsWith('18')

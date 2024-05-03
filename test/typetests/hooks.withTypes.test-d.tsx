@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useDispatch, useSelector, useStore } from '../../src/index'
+import { useDispatch, useSelector, useStore } from 'react-redux'
 import { exactType, expectExactType } from '../typeTestHelpers'
 import type { AppDispatch, AppStore, RootState } from './counterApp'
 import { incrementAsync } from './counterApp'

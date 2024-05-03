@@ -14,7 +14,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import type { Dispatch, Store } from 'redux'
 import { createStore } from 'redux'
-import { Provider, connect } from '../../src/index'
+import { Provider, connect } from 'react-redux'
 
 describe('React', () => {
   describe('server rendering', () => {

@@ -8,8 +8,8 @@ import type {
   ConnectedProps,
   DispatchProp,
   MapStateToProps,
-} from '../../src/index'
-import { Provider, connect } from '../../src/index'
+} from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import { expectType } from '../typeTestHelpers'
 
 import type { CounterState } from './counterApp'

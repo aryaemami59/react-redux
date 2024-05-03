@@ -4,7 +4,7 @@ import * as rtl from '@testing-library/react'
 import React from 'react'
 import type { AnyAction } from 'redux'
 import { createStore } from 'redux'
-import { Provider as ProviderMock, connect } from '../../src/index'
+import { Provider as ProviderMock, connect } from 'react-redux'
 
 const IS_REACT_18 = React.version.startsWith('18')
 

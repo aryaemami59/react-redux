@@ -11,8 +11,11 @@
     "target": "es2018",
     "jsx": "react",
     "baseUrl": ".",
+    "paths": {
+      "react-redux": ["../src/index.ts"] // @remap-prod-remove-line
+    },
     "skipLibCheck": true,
     "noImplicitReturns": false,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true
   }
 }

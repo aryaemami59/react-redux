@@ -13,6 +13,9 @@
     "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
+    "paths": {
+      "react-redux": ["./src/index.ts"] // @remap-prod-remove-line
+    },
     "rootDirs": ["./src", "./types"],
     "baseUrl": ".",
     "rootDir": ".",

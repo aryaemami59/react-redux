@@ -8,8 +8,8 @@ import type {
   ConnectedProps,
   DispatchProp,
   MapStateToProps,
-} from '../../src/index'
-import { Provider, ReactReduxContext, connect } from '../../src/index'
+} from 'react-redux'
+import { Provider, ReactReduxContext, connect } from 'react-redux'
 
 import { expectType } from '../typeTestHelpers'
 

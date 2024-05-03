@@ -5,8 +5,8 @@ import type { Dispatch, JSX } from 'react'
 import React, { Component } from 'react'
 import type { Store } from 'redux'
 import { createStore } from 'redux'
-import type { ReactReduxContextValue } from '../../src'
-import { Provider, ReactReduxContext, connect } from '../../src/index'
+import type { ReactReduxContextValue } from 'react-redux'
+import { Provider, ReactReduxContext, connect } from 'react-redux'
 
 const createExampleTextReducer =
   () =>

@@ -2,7 +2,7 @@
 
 import React from 'react'
 import type { Store } from 'redux'
-import { Provider } from '../../src'
+import { Provider } from 'react-redux'
 
 declare const store: Store<{ foo: string }>
 

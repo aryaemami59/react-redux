@@ -7,7 +7,7 @@ import type {
   ReactReduxContextValue,
   Selector,
   TypedUseSelectorHook,
-} from '../../src/index'
+} from 'react-redux'
 import {
   createDispatchHook,
   createSelectorHook,
@@ -16,7 +16,7 @@ import {
   useDispatch,
   useSelector,
   useStore,
-} from '../../src/index'
+} from 'react-redux'
 
 import type { AppDispatch, RootState } from './counterApp'
 import { incrementAsync } from './counterApp'

@@ -1,5 +1,5 @@
 import type { Store } from 'redux'
-import type { Subscription } from '../../src/utils/Subscription'
+import type { Subscription } from 'react-redux'
 import { createSubscription } from '../../src/utils/Subscription'
 
 describe('Subscription', () => {

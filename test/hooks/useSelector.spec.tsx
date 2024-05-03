@@ -19,7 +19,7 @@ import type {
   ReactReduxContextValue,
   Subscription,
   TypedUseSelectorHook,
-} from '../../src/index'
+} from 'react-redux'
 import {
   Provider,
   ReactReduxContext,
@@ -28,7 +28,7 @@ import {
   shallowEqual,
   useDispatch,
   useSelector,
-} from '../../src/index'
+} from 'react-redux'
 import { IS_REACT_19 } from '../../src/utils/react-is'
 
 // disable checks by default

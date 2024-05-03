@@ -81,6 +81,9 @@ jobs:
       - name: Install TypeScript ${{ matrix.ts }}
         run: yarn add typescript@${{ matrix.ts }}
 
+      - name: Erase path aliases
+        run: sed -i -e /@remap-prod-remove-line/d ./tsconfig.json ./test/tsconfig.test.json ./vitest.config.mts
+
       - name: Test types
         run: |
           yarn tsc --version
@@ -231,3 +234,41 @@ jobs:
 
       - name: Build example
         run: yarn build
+
+  test-dist:
+    name: Run local tests against build artifact
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20.x']
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Use node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'yarn'
+
+      - name: Install deps
+        run: yarn install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: package
+          path: .
+
+      - name: Check folder contents
+        run: ls -lah
+
+      - name: Install build artifact
+        run: yarn add ./package.tgz
+
+      - name: Erase path aliases
+        run: sed -i -e /@remap-prod-remove-line/d ./tsconfig.json ./test/tsconfig.test.json ./vitest.config.mts
+
+      - name: Run local tests against the build artifact
+        run: yarn test

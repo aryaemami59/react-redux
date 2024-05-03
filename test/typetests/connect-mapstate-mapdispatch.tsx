@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 import type { ActionCreator, Dispatch } from 'redux'
-import type { MapDispatchToProps, ReactReduxContext } from '../../src/index'
-import { connect } from '../../src/index'
+import type { MapDispatchToProps, ReactReduxContext } from 'react-redux'
+import { connect } from 'react-redux'
 
 // Test cases written in a way to isolate types and variables and verify the
 // output of `connect` to make sure the signature is what is expected

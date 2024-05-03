@@ -5,8 +5,8 @@ import {
   Provider as ProviderMock,
   useDispatch,
   createDispatchHook,
-} from '../../src/index'
-import type { ProviderProps, ReactReduxContextValue } from '../../src/'
+} from 'react-redux'
+import type { ProviderProps, ReactReduxContextValue } from 'react-redux'
 
 const store = createStore((c: number = 1): number => c + 1)
 const store2 = createStore((c: number = 1): number => c + 2)
