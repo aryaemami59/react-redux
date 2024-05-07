@@ -1,34 +1,64 @@
-import { defineConfig, Options } from 'tsup'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import type { Options } from 'tsup'
+import { defineConfig } from 'tsup'
 
-import path from 'path'
-import fs from 'fs'
-
-function writeCommonJSEntry() {
-  fs.writeFileSync(
+async function writeCommonJSEntry() {
+  await fs.writeFile(
     path.join('dist/cjs/', 'index.js'),
     `'use strict'
 if (process.env.NODE_ENV === 'production') {
   module.exports = require('./react-redux.production.min.cjs')
 } else {
   module.exports = require('./react-redux.development.cjs')
-}`
+}`,
   )
 }
 
 export default defineConfig((options) => {
+  const reactIs: Options = {
+    entry: { 'react-is-shim': './src/utils/react-is.ts' },
+    format: ['esm', 'cjs'],
+    target: ['esnext'],
+    env: { NODE_ENV: 'production' },
+    treeshake: true,
+    define: {
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    },
+    esbuildOptions: (options) => {
+      options.alias = { 'react-is': 'react-is/cjs/react-is.production' }
+    },
+  }
+
   const commonOptions: Partial<Options> = {
     entry: {
       'react-redux': 'src/index.ts',
     },
     sourcemap: true,
     target: 'es2020',
+    treeshake: 'smallest',
+    // external: ['react-is'],
     ...options,
   }
 
   return [
+    reactIs,
     // Standard ESM, embedded `process.env.NODE_ENV` checks
     {
       ...commonOptions,
+      esbuildPlugins: [
+        {
+          name: 'react-is',
+          setup: (build) => {
+            build.onResolve({ filter: /^..\/.*\/react-is$/ }, async (args) => {
+              console.log({ args })
+              return {
+                path: path.resolve('dist', 'react-is-shim.mjs'),
+              }
+            })
+          },
+        },
+      ],
       format: ['esm'],
       outExtension: () => ({ js: '.mjs' }),
       dts: true,
@@ -70,6 +100,19 @@ export default defineConfig((options) => {
     // CJS development
     {
       ...commonOptions,
+      esbuildPlugins: [
+        {
+          name: 'react-is',
+          setup: (build) => {
+            build.onResolve({ filter: /^..\/.*\/react-is$/ }, async (args) => {
+              console.log({ args })
+              return {
+                path: path.resolve('dist', 'react-is-shim.js'),
+              }
+            })
+          },
+        },
+      ],
       entry: {
         'react-redux.development': 'src/index.ts',
       },
@@ -93,8 +136,10 @@ export default defineConfig((options) => {
       outDir: './dist/cjs/',
       outExtension: () => ({ js: '.cjs' }),
       minify: true,
-      onSuccess: () => {
-        writeCommonJSEntry()
+      onSuccess: async () => {
+        await writeCommonJSEntry()
+        await fs.unlink(path.resolve('dist', 'react-is-shim.mjs'))
+        await fs.unlink(path.resolve('dist', 'react-is-shim.js'))
       },
     },
   ]

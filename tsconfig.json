@@ -14,7 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "paths": {
-      "react-redux": ["./src/index.ts"] // @remap-prod-remove-line
+      "react-redux": ["./src/index.ts"], // @remap-prod-remove-line
+      // "react-is": ["./src/utils/react-is.ts"]
     },
     "rootDirs": ["./src", "./types"],
     "baseUrl": ".",
