@@ -4,11 +4,7 @@ import { bindActionCreators } from '@reduxjs/toolkit'
 import type { ReactElement } from 'react'
 import React, { Component } from 'react'
 import { createRoot } from 'react-dom/client'
-import type {
-  ConnectedProps,
-  DispatchProp,
-  MapStateToProps,
-} from 'react-redux'
+import type { ConnectedProps, DispatchProp, MapStateToProps } from 'react-redux'
 import { Provider, connect } from 'react-redux'
 import { expectType } from '../typeTestHelpers'
 
