@@ -1,7 +1,6 @@
 /* eslint-disable valid-jsdoc, @typescript-eslint/no-unused-vars */
 import type { ComponentType } from 'react'
 import { React } from '../utils/react'
-// import { isValidElementType, isContextConsumer } from 'react-is'
 import { isValidElementType, isContextConsumer } from '../utils/react-is'
 
 import type { Store } from 'redux'

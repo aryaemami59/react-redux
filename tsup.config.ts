@@ -15,18 +15,14 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-export default defineConfig((options) => {
-  const reactIs: Options = {
-    entry: { 'react-is-shim': './src/utils/react-is.ts' },
-    format: ['esm', 'cjs'],
+export default defineConfig((options): Options[] => {
+  const reactIsInline: Options = {
+    entry: { 'react-is-inline': './src/utils/react-is.ts' },
+    format: ['esm'],
     target: ['esnext'],
-    replaceNodeEnv: true,
     env: { NODE_ENV: 'production' },
     minify: true,
     treeshake: true,
-    define: {
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    },
     esbuildOptions: (options) => {
       options.alias = { 'react-is': 'react-is/cjs/react-is.production' }
     },
@@ -38,29 +34,27 @@ export default defineConfig((options) => {
     },
     sourcemap: true,
     target: 'es2020',
-    treeshake: 'smallest',
-    // external: ['react-is'],
+    treeshake: true,
+    esbuildPlugins: [
+      {
+        name: 'react-is',
+        setup: (build) => {
+          build.onResolve({ filter: /^.*\/.*\/react-is$/ }, () => {
+            return {
+              path: path.resolve('dist', 'react-is-inline.mjs'),
+            }
+          })
+        },
+      },
+    ],
     ...options,
   }
 
   return [
-    reactIs,
+    reactIsInline,
     // Standard ESM, embedded `process.env.NODE_ENV` checks
     {
       ...commonOptions,
-      esbuildPlugins: [
-        {
-          name: 'react-is',
-          setup: (build) => {
-            build.onResolve({ filter: /^..\/.*\/react-is$/ }, async (args) => {
-              console.log({ args })
-              return {
-                path: path.resolve('dist', 'react-is-shim.mjs'),
-              }
-            })
-          },
-        },
-      ],
       format: ['esm'],
       outExtension: () => ({ js: '.mjs' }),
       dts: true,
@@ -102,19 +96,6 @@ export default defineConfig((options) => {
     // CJS development
     {
       ...commonOptions,
-      esbuildPlugins: [
-        {
-          name: 'react-is',
-          setup: (build) => {
-            build.onResolve({ filter: /^..\/.*\/react-is$/ }, async (args) => {
-              console.log({ args })
-              return {
-                path: path.resolve('dist', 'react-is-shim.js'),
-              }
-            })
-          },
-        },
-      ],
       entry: {
         'react-redux.development': 'src/index.ts',
       },
@@ -140,8 +121,7 @@ export default defineConfig((options) => {
       minify: true,
       onSuccess: async () => {
         await writeCommonJSEntry()
-        await fs.unlink(path.resolve('dist', 'react-is-shim.mjs'))
-        await fs.unlink(path.resolve('dist', 'react-is-shim.js'))
+        await fs.unlink(path.resolve('dist', 'react-is-inline.mjs'))
       },
     },
   ]
