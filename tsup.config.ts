@@ -20,7 +20,9 @@ export default defineConfig((options) => {
     entry: { 'react-is-shim': './src/utils/react-is.ts' },
     format: ['esm', 'cjs'],
     target: ['esnext'],
+    replaceNodeEnv: true,
     env: { NODE_ENV: 'production' },
+    minify: true,
     treeshake: true,
     define: {
       'process.env.NODE_ENV': JSON.stringify('production'),
