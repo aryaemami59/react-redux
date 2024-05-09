@@ -6991,14 +6991,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.0.0-beta-e7d213dfb0-20240507":
-  version: 19.0.0-beta-e7d213dfb0-20240507
-  resolution: "react-dom@npm:19.0.0-beta-e7d213dfb0-20240507"
+"react-dom@npm:19.0.0-beta-6946ebe620-20240508":
+  version: 19.0.0-beta-6946ebe620-20240508
+  resolution: "react-dom@npm:19.0.0-beta-6946ebe620-20240508"
   dependencies:
-    scheduler: "npm:0.25.0-beta-e7d213dfb0-20240507"
+    scheduler: "npm:0.25.0-beta-6946ebe620-20240508"
   peerDependencies:
-    react: 19.0.0-beta-e7d213dfb0-20240507
-  checksum: 10/7abfa574c517c061b69b6ac5ef9257c00f83ac3bd583bbf6dbfa38354f1e83d30c5f7d4c0a8c64ad7e1db0bb0e939d66c42ccda4d702f9d828e8b255ecdd639a
+    react: 19.0.0-beta-6946ebe620-20240508
+  checksum: 10/0831ce477e8eefd10d548e61b5297c752557fad2723fed04e45a73dd5f266352c0861cb22f6acbf53644657280880724d4ab110c3f0e7a0949277756b39f9ee5
   languageName: node
   linkType: hard
 
@@ -7059,8 +7059,8 @@ __metadata:
     glob: "npm:^7.1.6"
     jsdom: "npm:^24.0.0"
     prettier: "npm:^3.1.1"
-    react: "npm:19.0.0-beta-e7d213dfb0-20240507"
-    react-dom: "npm:19.0.0-beta-e7d213dfb0-20240507"
+    react: "npm:19.0.0-beta-6946ebe620-20240508"
+    react-dom: "npm:19.0.0-beta-6946ebe620-20240508"
     redux: "npm:^5.0.0"
     rimraf: "npm:^3.0.2"
     tsup: "npm:^7.0.0"
@@ -7079,10 +7079,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react@npm:19.0.0-beta-e7d213dfb0-20240507":
-  version: 19.0.0-beta-e7d213dfb0-20240507
-  resolution: "react@npm:19.0.0-beta-e7d213dfb0-20240507"
-  checksum: 10/793a3bd4bf9bcafbea1f87c2981dbfa6d6a1da982d457f63fb968c0a653a1702cd08b4f0ff11d5545a053f09381313b45e59d54f675330ed49c56f253f4d1a8d
+"react@npm:19.0.0-beta-6946ebe620-20240508":
+  version: 19.0.0-beta-6946ebe620-20240508
+  resolution: "react@npm:19.0.0-beta-6946ebe620-20240508"
+  checksum: 10/74f1c5369c7616ef6af6a705f245864addd2cb90b33bc0070f677e1c92b5be47b3cac0ae9a040dd15f58904e0930d99d1364e758e79eaa9ae1296954cc9e669a
   languageName: node
   linkType: hard
 
@@ -7590,10 +7590,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.25.0-beta-e7d213dfb0-20240507":
-  version: 0.25.0-beta-e7d213dfb0-20240507
-  resolution: "scheduler@npm:0.25.0-beta-e7d213dfb0-20240507"
-  checksum: 10/62d3e82afa831fb8ca80503548a3f830a9a5cff61e811e5033524175c2ba82bcb888163d1bb5aa6c22574d8a960faec651aed524c04f14d8e5ece4a88dfe0eb2
+"scheduler@npm:0.25.0-beta-6946ebe620-20240508":
+  version: 0.25.0-beta-6946ebe620-20240508
+  resolution: "scheduler@npm:0.25.0-beta-6946ebe620-20240508"
+  checksum: 10/522476652ee02d928c9a514c132ce8263758ed064739ce2cf3a4d447aa3b02c8e216107c345b228aa145a486a9783f3d25a8898eff6ea9aeae533f47a60adcf2
   languageName: node
   linkType: hard
 
