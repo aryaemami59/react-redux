@@ -754,8 +754,7 @@ describe('type tests', () => {
     myHoc1(Test)
 
     const myHoc2 = <P,>(C: React.FC<P>): React.ComponentType<P> => C
-    // TODO Figure out the error here
-    // myHoc2(Test)
+    myHoc2(Test)
   })
 
   test('Ref', () => {
@@ -788,7 +787,7 @@ describe('type tests', () => {
     ;<ConnectedForwardedFunctionalComponent ref={modernRef} />
     // Should not be able to use legacy string refs
     ;<ConnectedForwardedFunctionalComponent
-      // @ts-expect-error
+      // @ts-ignore FIXME: If we use `@ts-expect-error` here, we will get an `Unused `@ts-expect-error` directive` error if we have `@types/react` ^18.61.
       ref={''}
     />
     // ref type should agree with type of the forwarded ref
