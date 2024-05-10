@@ -1,5 +1,6 @@
 /*eslint-disable react/prop-types*/
 
+import { IS_REACT_19 } from '@internal/utils/react-is'
 import * as rtl from '@testing-library/react'
 import type { Dispatch, ElementType, JSX, MouseEvent, ReactNode } from 'react'
 import React, { Component } from 'react'
@@ -14,7 +15,6 @@ import type {
   UnknownAction,
 } from 'redux'
 import { applyMiddleware, createStore } from 'redux'
-import { IS_REACT_19 } from '../../src/utils/react-is'
 
 const IS_REACT_18 = React.version.startsWith('18')
 
