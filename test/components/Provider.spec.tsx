@@ -15,7 +15,6 @@ const createExampleTextReducer =
 
 describe('React', () => {
   describe('Provider', () => {
-
     const createChild = (storeKey = 'store') => {
       class Child extends Component {
         render() {
@@ -344,6 +343,7 @@ describe('React', () => {
           <div />
         </Provider>,
       )
+
       expect(spy).toHaveBeenCalledTimes(0)
 
       rtl.cleanup()
