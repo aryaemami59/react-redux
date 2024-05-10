@@ -2,7 +2,7 @@ import type { ElementType, MemoExoticComponent, ReactElement } from 'react'
 import React from 'react'
 
 // Directly ported from:
-// https://unpkg.com/browse/react-is@19.0.0-beta-4508873393-20240430/cjs/react-is.production.js
+// https://unpkg.com/browse/react-is@19.0.0-beta-04b058868c-20240508/cjs/react-is.production.js
 // It's very possible this could change in the future, but given that
 // we only use these in `connect`, this is a low priority.
 
