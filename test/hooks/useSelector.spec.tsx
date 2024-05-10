@@ -1,5 +1,7 @@
 /*eslint-disable react/prop-types*/
 
+import type { UseSelectorOptions } from '@internal/hooks/useSelector'
+import { IS_REACT_19 } from '@internal/utils/react-is'
 import * as rtl from '@testing-library/react'
 import type { DispatchWithoutAction, FunctionComponent, ReactNode } from 'react'
 import React, {
@@ -11,9 +13,6 @@ import React, {
   useReducer,
   useState,
 } from 'react'
-import type { Action, AnyAction, Store } from 'redux'
-import { createStore } from 'redux'
-import type { UseSelectorOptions } from '../../src/hooks/useSelector'
 import type {
   ProviderProps,
   ReactReduxContextValue,
@@ -29,7 +28,8 @@ import {
   useDispatch,
   useSelector,
 } from 'react-redux'
-import { IS_REACT_19 } from '../../src/utils/react-is'
+import type { Action, AnyAction, Store } from 'redux'
+import { createStore } from 'redux'
 
 // disable checks by default
 function ProviderMock<A extends Action<any> = AnyAction, S = unknown>({
