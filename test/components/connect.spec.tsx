@@ -82,8 +82,6 @@ describe('React', () => {
       return action.type === 'APPEND' ? prev + action.body : prev
     }
 
-    afterEach(() => rtl.cleanup())
-
     describe('Core subscription and prop passing behavior', () => {
       it('should receive the store state in the context', () => {
         const store = createStore(() => ({ hi: 'there' }))
@@ -657,10 +655,9 @@ describe('React', () => {
         expect(spy.mock.calls[0][0]).toMatch(
           /mapStateToProps\(\) in Connect\(Container\) must return a plain object/,
         )
-        spy.mockRestore()
+        spy.mockClear()
         rtl.cleanup()
 
-        spy = vi.spyOn(console, 'error').mockImplementation(() => {})
         rtl.render(
           <ProviderMock store={store}>
             {makeContainer(
@@ -670,7 +667,7 @@ describe('React', () => {
             )}
           </ProviderMock>,
         )
-        expect(spy).toHaveBeenCalledTimes(1)
+        expect(spy).toHaveBeenCalledOnce()
         expect(spy.mock.calls[0][0]).toMatch(
           /mapStateToProps\(\) in Connect\(Container\) must return a plain object/,
         )
